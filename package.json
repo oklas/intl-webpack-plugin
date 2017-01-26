@@ -1,6 +1,6 @@
 {
   "name": "merge-webpack-plugin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Webpack plugin with loader for merge sources",
   "main": "index.js",
   "repository": {
