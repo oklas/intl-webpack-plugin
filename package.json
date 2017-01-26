@@ -1,0 +1,42 @@
+{
+  "name": "merge-webpack-plugin",
+  "version": "0.0.0",
+  "description": "Webpack plugin with loader for merge json sources to single asset",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oklas/merge-webpack-plugin"
+  },
+  "keywords": [
+    "join",
+    "webpack",
+    "plugin",
+    "loader",
+    "merge",
+    "module",
+    "json",
+    "files",
+    "emit",
+    "conf",
+    "config"
+  ],
+  "author": "Serguei Okladnikov <oklaspec@gmail.com> (https://github.com/oklas)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oklas/merge-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/oklas/merge-webpack-plugin",
+  "devDependencies": {
+    "json-loader": "^0.5.4",
+    "mocha": "^2.3.3",
+    "should": "^11.1.2",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "merge": "^1.2.0",
+    "join-webpack-plugin": "^0.0.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
