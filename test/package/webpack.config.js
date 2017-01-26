@@ -9,16 +9,17 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.(json)$/i,
+        test: /\.(yaml)$/i,
         loaders: [
-          MergePlugin.loader({name: 'result.[hash].json'})
+          MergePlugin.loader({name: 'result.[hash].yaml'}),
+          'yaml-loader'
         ]
       }
     ]
   },
   plugins: [
     new MergePlugin({
-      search: './src/**/*.json',
+      search: './src/**/*.yaml',
     })
   ]
 };
