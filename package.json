@@ -1,7 +1,7 @@
 {
   "name": "merge-webpack-plugin",
   "version": "0.0.0",
-  "description": "Webpack plugin with loader for merge json sources to single asset",
+  "description": "Webpack plugin with loader for merge sources",
   "main": "index.js",
   "repository": {
     "type": "git",
