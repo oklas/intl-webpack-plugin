@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "merge": "^1.2.0",
-    "join-webpack-plugin": "^0.0.0"
+    "join-webpack-plugin": "^0.1.0"
   },
   "scripts": {
     "test": "mocha"

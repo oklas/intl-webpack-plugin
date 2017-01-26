@@ -1,5 +1,4 @@
-var JoinPlugin = require("join-webpack-plugin");
-const merge = require("merge");
+var MergePlugin = require("../../");
 
 module.exports = {
   entry: "./index",
@@ -12,23 +11,14 @@ module.exports = {
       {
         test: /\.(json)$/i,
         loaders: [
-          JoinPlugin.loader({name: 'result.[hash].json'})
+          MergePlugin.loader({name: 'result.[hash].json'})
         ]
       }
     ]
   },
   plugins: [
-    new JoinPlugin({
+    new MergePlugin({
       search: './src/**/*.json',
-      join: function(common, addition) {
-        return merge.recursive(
-          common ? common : {},
-          JSON.parse(addition)
-        );
-      },
-      save: function(common) {
-        return JSON.stringify(common);
-      }
     })
   ]
 };
