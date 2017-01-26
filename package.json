@@ -29,7 +29,7 @@
   "devDependencies": {
     "json-loader": "^0.5.4",
     "mocha": "^2.3.3",
-    "should": "^11.1.2",
+    "expect": "^1.20.2",
     "webpack": "^1.14.0"
   },
   "dependencies": {
