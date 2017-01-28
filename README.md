@@ -1,3 +1,5 @@
+[![npm][npm]][npm-url]
+
 # merge plugin for webpack
 
 Webpack plugin with loader for merge sources
@@ -18,7 +20,7 @@ may be splitted to groups of set of files that produce group of assets.
 ## Install
 
 ```bash
-npm install --save-dev merge-webpack-plugin
+npm install --save merge-webpack-plugin
 ```
 
 
@@ -187,3 +189,6 @@ in `interpolateName()` from [loader-utils](https://github.com/webpack/loader-uti
 ## LICENSE
 
 #### [MIT](./LICENSE.md)
+
+[npm]: https://img.shields.io/npm/v/merge-webpack-plugin.svg
+[npm-url]: https://npmjs.com/package/merge-webpack-plugin
