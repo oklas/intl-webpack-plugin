@@ -12,7 +12,7 @@ function MergePlugin(options) {
   options.join = function(common, addition) {
     return merge.recursive(
       common ? common : {},
-      JSON.parse(addition)
+      addition ? JSON.parse(addition) : {}
     );
   };
 
