@@ -1,7 +1,22 @@
 var JoinPlugin = require('join-webpack-plugin');
 var merge = require("merge");
+var flatten = require('flat');
 
-function MergePlugin(options) {
+
+function flattenLowness(lowness, obj, opts) {
+  var res = {};
+  if(lowness) {
+    Object.keys(obj).forEach(function(key) {
+      res[key] = flattenLowness(lowness-1, obj[key], opts);
+    });
+  } else {
+    res = flatten(obj, opts);
+  }
+  return res;
+}
+
+
+function IntlPlugin(options) {
 
   options.join = function(common, addition) {
     return merge.recursive(
@@ -10,16 +25,26 @@ function MergePlugin(options) {
     );
   };
 
+  var lowness = options.flattenLowness;
+  lowness = undefined === lowness ? 1 : lowness;
+  var depth = options.flattenDepth;
+  var flattenOpts = depth ? {} : {maxDepth: depth};
+
   options.save = function(common) {
-    return JSON.stringify(common);
+    return JSON.stringify(
+      flattenLowness(lowness, common, flattenOpts)
+    );
   };
+
+  options.group = options.group || "[name]"
 
   JoinPlugin.call(this,options);
 }
-MergePlugin.prototype = Object.create(JoinPlugin.prototype);
 
-MergePlugin.prototype.loader = JoinPlugin.prototype.loader;
-MergePlugin.loader = JoinPlugin.loader;
+IntlPlugin.prototype = Object.create(JoinPlugin.prototype);
 
-module.exports = MergePlugin;
+IntlPlugin.prototype.loader = JoinPlugin.prototype.loader;
+IntlPlugin.loader = JoinPlugin.loader;
+
+module.exports = IntlPlugin;
 

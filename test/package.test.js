@@ -11,20 +11,16 @@ describe('Test package', function() {
     var options = require('./package/webpack.config.js')
     options.context = packageDir;
     options.output.path = distDir;
+    options.output.publicPath = './test/dist/';
 
     webpack(options, function(err, stats) {
       if(err) return done(err);
       if(stats.hasErrors()) return done(new Error(stats.toString()));
 
       var bundle = require(path.join(distDir,'main.js'));
-      var result = bundle(distDir);
-      expect(result).toMatch(/^result/);
 
-      var data = path.join(distDir, result);
-      data = fs.readFileSync(data, "utf-8");
-      data = JSON.parse(data);
-      expect(data.key.a).toBe(1);
-      expect(data.key.b).toBe(2);
+      var result = bundle(distDir);
+      expect(result).toMatch(/^result ok/);
 
       done();
     });

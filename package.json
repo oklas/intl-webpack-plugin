@@ -1,11 +1,11 @@
 {
-  "name": "merge-webpack-plugin",
-  "version": "0.1.0",
-  "description": "Webpack plugin with loader for merge sources",
+  "name": "intl-webpack-plugin",
+  "version": "0.0.0",
+  "description": "Webpack plugin with loader for component internationalization",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oklas/merge-webpack-plugin"
+    "url": "https://github.com/oklas/intl-webpack-plugin"
   },
   "keywords": [
     "join",
@@ -23,9 +23,9 @@
   "author": "Serguei Okladnikov <oklaspec@gmail.com> (https://github.com/oklas)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/oklas/merge-webpack-plugin/issues"
+    "url": "https://github.com/oklas/intl-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/oklas/merge-webpack-plugin",
+  "homepage": "https://github.com/oklas/intl-webpack-plugin",
   "devDependencies": {
     "istanbul": "^0.4.5",
     "codecov.io": "^0.1.6",
@@ -39,8 +39,9 @@
     "webpack": "1 || ^2 || ^2.1.0-beta || ^2.2.0-rc"
   },
   "dependencies": {
-    "merge": "^1.2.0",
-    "join-webpack-plugin": "^0.1.0"
+    "flat": "^2.0.1",
+    "join-webpack-plugin": "^0.1.0",
+    "merge": "^1.2.0"
   },
   "scripts": {
     "test": "mocha",

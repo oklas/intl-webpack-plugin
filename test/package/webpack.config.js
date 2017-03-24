@@ -1,7 +1,8 @@
-var MergePlugin = require("../../");
+var IntlPlugin = require("../../");
 
 module.exports = {
   entry: "./index",
+  target: "node",
   output: {
     filename: "[name].js",
     libraryTarget: 'umd'
@@ -9,16 +10,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(yaml)$/i,
+        test: /\.(i18n|intl|yml|yaml)$/i,
         use: [
-          MergePlugin.loader({name: 'result.[hash].yaml'}),
+          IntlPlugin.loader({name: '[name].[hash].yaml'}),
           'yaml-loader'
         ]
       }
     ]
   },
   plugins: [
-    new MergePlugin({
+    new IntlPlugin({
       search: './src/**/*.yaml',
     })
   ]
