@@ -27,16 +27,23 @@
   },
   "homepage": "https://github.com/oklas/merge-webpack-plugin",
   "devDependencies": {
-    "yaml-loader": "^0.4.0",
-    "mocha": "^2.3.3",
+    "istanbul": "^0.4.5",
+    "codecov.io": "^0.1.6",
+    "coveralls": "^2.12.0",
     "expect": "^1.20.2",
-    "webpack": "^1.14.0"
+    "mocha": "^2.5.3",
+    "webpack": "^2.3.1",
+    "yaml-loader": "^0.4.0"
+  },
+  "peerDependencies": {
+    "webpack": "1 || ^2 || ^2.1.0-beta || ^2.2.0-rc"
   },
   "dependencies": {
     "merge": "^1.2.0",
     "join-webpack-plugin": "^0.1.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha"
   }
 }

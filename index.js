@@ -1,9 +1,3 @@
-
-//! @file
-//! @date 2017.01.26
-//! @license MIT (in the root of this source tree)
-//! @author Serguei Okladnikov <oklaspec@gmail.com>
-
 var JoinPlugin = require('join-webpack-plugin');
 var merge = require("merge");
 

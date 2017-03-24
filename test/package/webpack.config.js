@@ -7,10 +7,10 @@ module.exports = {
     libraryTarget: 'umd'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(yaml)$/i,
-        loaders: [
+        use: [
           MergePlugin.loader({name: 'result.[hash].yaml'}),
           'yaml-loader'
         ]

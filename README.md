@@ -1,4 +1,6 @@
-[![npm][npm]][npm-url]
+[![npm][npm-image]][npm-url]
+[![travis-cl][travis-image]][travis-url]
+[![coverage][cover-image]][cover-url]
 
 # merge plugin for webpack
 
@@ -190,5 +192,9 @@ in `interpolateName()` from [loader-utils](https://github.com/webpack/loader-uti
 
 #### [MIT](./LICENSE.md)
 
-[npm]: https://img.shields.io/npm/v/merge-webpack-plugin.svg
+[npm-image]: https://img.shields.io/npm/v/merge-webpack-plugin.svg
 [npm-url]: https://npmjs.com/package/merge-webpack-plugin
+[travis-image]: https://travis-ci.org/oklas/merge-webpack-plugin.svg
+[travis-url]: https://travis-ci.org/oklas/merge-webpack-plugin
+[cover-image]: https://img.shields.io/codecov/c/github/oklas/merge-webpack-plugin.svg
+[cover-url]: https://codecov.io/gh/oklas/merge-webpack-plugin
