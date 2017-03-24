@@ -1,24 +1,24 @@
 {
   "name": "intl-webpack-plugin",
-  "version": "0.0.0",
-  "description": "Webpack plugin with loader for component internationalization",
+  "version": "0.1.0",
+  "description": "Webpack plugin with loader for internationalization",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/oklas/intl-webpack-plugin"
   },
   "keywords": [
-    "join",
+    "intl",
+    "internationalization",
+    "i18n",
+    "locale",
+    "localization",
     "webpack",
-    "plugin",
-    "loader",
+    "component",
     "merge",
-    "module",
-    "json",
-    "files",
-    "emit",
-    "conf",
-    "config"
+    "join",
+    "plugin",
+    "loader"
   ],
   "author": "Serguei Okladnikov <oklaspec@gmail.com> (https://github.com/oklas)",
   "license": "MIT",
