@@ -37,6 +37,7 @@ function IntlPlugin(options) {
   };
 
   options.group = options.group || "[name]"
+  options.name = options.name || '[name].[hash].json'
 
   JoinPlugin.call(this,options);
 }

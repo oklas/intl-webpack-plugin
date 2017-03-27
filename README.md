@@ -138,7 +138,7 @@ var intlPlugin = new IntlPlugin({
   skip: 'substr' || /regexp/ || [ 'substr', /regex/, ...],
   flattenLowness: 1,
   flattenDepth: 2,
-  loaderOptions: { ...LOADER_OPTIONS }
+  ...loaderOptions
 });
 ```
 
@@ -154,7 +154,7 @@ Options:
   the names of locales.
 * `flattenDepth` - flattenization depth level. The default value `flattenDepth`
   is not defined which mean depth does not limited and works through the depth,
-  to disable flattenization specify value 1 on `flattenDepth`
+  to disable flattenization specify value **1** on `flattenDepth`
 * `group` - the default `group` loader option, the default value is '[name]'
   to join in groups by file name which is equal to the name of the locale
 * `name` - default `name` loader option (define pattern for asset file name)
