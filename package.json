@@ -1,6 +1,6 @@
 {
   "name": "intl-webpack-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Webpack plugin with loader for internationalization",
   "main": "index.js",
   "repository": {
@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "flat": "^2.0.1",
-    "join-webpack-plugin": "^0.1.0",
+    "join-webpack-plugin": "^0.1.2",
     "merge": "^1.2.0"
   },
   "scripts": {
