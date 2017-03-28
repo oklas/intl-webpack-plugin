@@ -35,8 +35,9 @@ locale assets. Advantages to use:
 This is locale data build tool and it is independent from internationalization
 library or framework which may be react-intl or i18n-js or yui-intl
 or angular-dynamic-locale or any your favorite internationalization system.
-A link to a running demonstration
-[application](https://oklas.github.io/component-intl-example/).
+A link to a running
+
+* [demonstration application](https://oklas.github.io/component-intl-example/).
 
 
 ## Install
@@ -63,7 +64,7 @@ This example is minimal configuration to merge json to single asset:
   },
   plugins: [
     new IntlPlugin({
-      search: [ './src/**/*.intl', './src/**/*.i18n' ]
+      search: [ './src/**/*.intl' ]
     })
 ```
 
@@ -71,7 +72,7 @@ This example is minimal configuration to merge json to single asset:
 ## Requiring
 
 The name of file is locale identificator but this may be changed to
-file extestion or to path by configure using
+file extestion by configure using
 [grouping technique](https://github.com/oklas/join-webpack-plugin#grouping)
 
 In order to require the builded locale asset need at least one file which
@@ -104,11 +105,22 @@ and how to import library with support internationalization.
 
 ## Building libraries
 
+This section is for component library developers.
+
+Refer to the
+[demonstration component library](https://github.com/oklas/component-intl-welcome)
+example which demonstrates how to create library with support of
+internationalization and documentation how to integrate it in application.
+
 To join locales from library package to application locale assets need to:
 
-* describe locale structure organization and format to load to configure plugin
-* export file which require necessary locales to join
-* or describe files and how to configure plugin to search locale files
+* describe in documentation locale structure organization and format to load,
+  and enumerate supported locales - this required to configure this webpack
+  plugin with loaders
+* export file which each locale file is required by calling `require` function
+  or by `import`, describe how to require it in code
+* and/or another way is to describe path pattern to locale files and how to
+  configure plugin to search and prefetch
 
 So application developers may identify how to integrate location assets to
 application and choose way how to configure plugin to join library package
@@ -118,11 +130,6 @@ described in **[component approach](https://github.com/oklas/component-intl)**
 Library package locales may be joined by define pattern in `search` plugin
 option or by importing module from library in which library locales enumerated
 by calling `require` function or `import`.
-
-Refer to the
-[demonstration component library](https://github.com/oklas/component-intl-welcome)
-example which demonstrates how to create library with support of
-internationalization.
 
 
 ## Plugin configuration
