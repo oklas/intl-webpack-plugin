@@ -28,7 +28,7 @@ function IntlPlugin(options) {
   var lowness = options.flattenLowness;
   lowness = undefined === lowness ? 1 : lowness;
   var depth = options.flattenDepth;
-  var flattenOpts = depth ? {} : {maxDepth: depth};
+  var flattenOpts = depth ? {maxDepth: depth} : {};
 
   options.save = function(common) {
     return JSON.stringify(
