@@ -26,10 +26,12 @@ describe('Test function save', function() {
       search: 'none',
       flattenLowness: 0
     })
-    var res = intl.options.save({a: {b1: 'a.b1', b2: {c: 'a.b2.c'}}})
-    res = JSON.parse(res)
+    var res = JSON.parse(intl.options.save(
+      {a: {b1: 'a.b1', b2: {c: 'a.b2.c'}}, aa:[{c:'aa.0.c'}]}
+    ))
     expect(res['a.b1']).toEqual('a.b1')
     expect(res['a.b2.c']).toEqual('a.b2.c')
+    expect(res['aa.0.c']).toEqual('aa.0.c')
   })
 
   it('can do flattenization started from some lowness', function() {
@@ -37,10 +39,12 @@ describe('Test function save', function() {
       search: 'none',
       flattenLowness: 1,
     })
-    var res = intl.options.save({a: {b1: 'a.b1', b2: {c: 'a.b2.c'}}})
-    res = JSON.parse(res)
+    var res = JSON.parse(intl.options.save(
+      {a: {b1: 'a.b1', b2: {c: 'a.b2.c'}}, aa:[{c:'aa.0.c'}]}
+    ))
     expect(res['a']['b1']).toEqual('a.b1')
     expect(res['a']['b2.c']).toEqual('a.b2.c')
+    expect(res['aa']['0.c']).toEqual('aa.0.c')
   })
 
   it('can do flattenization through some depth', function() {
@@ -49,10 +53,12 @@ describe('Test function save', function() {
       flattenLowness: 0,
       flattenDepth: 2
     })
-    var res = intl.options.save({a: {b1: 'a.b1', b2: {c: 'a.b2.c'}}})
-    res = JSON.parse(res)
+    var res = JSON.parse(intl.options.save(
+      {a: {b1: 'a.b1', b2: {c: 'a.b2.c'}}, aa:[{c:'aa.0.c'}]}
+    ))
     expect(res['a.b1']).toEqual('a.b1')
     expect(res['a.b2']['c']).toEqual('a.b2.c')
+    expect(res['aa.0']['c']).toEqual('aa.0.c')
   })
 
 })
