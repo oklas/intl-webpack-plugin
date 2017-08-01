@@ -7,7 +7,11 @@ function flattenLowness(lowness, obj, opts) {
   var res = {};
   if(lowness) {
     Object.keys(obj).forEach(function(key) {
-      res[key] = flattenLowness(lowness-1, obj[key], opts);
+      if(obj[key] instanceof Array || obj[key] instanceof Object) {
+        res[key] = flattenLowness(lowness-1, obj[key], opts);
+      } else {
+        res[key] = obj[key]
+      }
     });
   } else {
     res = flatten(obj, opts);
@@ -28,7 +32,7 @@ function IntlPlugin(options) {
   var lowness = options.flattenLowness;
   lowness = undefined === lowness ? 1 : lowness;
   var depth = options.flattenDepth;
-  var flattenOpts = depth ? {} : {maxDepth: depth};
+  var flattenOpts = depth ? {maxDepth: depth} : {};
 
   options.save = function(common) {
     return JSON.stringify(
