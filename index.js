@@ -7,7 +7,7 @@ function flattenLowness(lowness, obj, opts) {
   var res = {};
   if(lowness) {
     Object.keys(obj).forEach(function(key) {
-      if(obj[key] instanceof Object || obj[key] instanceof Array) {
+      if(obj[key] instanceof Array || obj[key] instanceof Object) {
         res[key] = flattenLowness(lowness-1, obj[key], opts);
       } else {
         res[key] = obj[key]
